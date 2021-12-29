@@ -4,8 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pandas = "*"
+folium = "*"
+ipykernel = "*"
+matplotlib = "*"
 numpy = "*"
+pandas = "*"
+seaborn = "*"
 
 [dev-packages]
 autopep8 = "*"
