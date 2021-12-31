@@ -33,7 +33,7 @@ macでscipyをインストールする際にエラーが出る場合は、事前
 $ pipenv sync --dev
 ```
 
-`Pipfile`に新しいパッケージを追加した際は以下を実行してインストールします。
+`Pipfile`に新しいパッケージを追加した際は以下を実行してインストールします。  
 `Pipfile.lock`も更新されます。
 ```
 $ pipenv install --dev
