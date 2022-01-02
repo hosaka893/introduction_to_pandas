@@ -4,7 +4,7 @@ pandas初心者向けの学習教材です。
 
 ## 仮想環境の構築
 
-Jupyter Notebookが動く環境であれば、特別な環境は必要ありません。  
+Jupyter NotebookまたはJupyter Labが動く環境があれば、特別な設定は必要ありません。  
 必要なPythonライプラリを適宜インストールしてください。
 
 `pipenv`で仮想環境を構築する場合は、以下の手順でおこないます。
@@ -50,12 +50,15 @@ Launching subshell in virtual environment...
 Python 3.9.7
 ```
 
-`exit`コマンドか、`Ctrl-D`で仮想環境を抜けます。
+仮想環境を抜けます。
 ```
 (introduction_to_pandas) $ exit
 ```
 
 ## 仮想環境をJupyter Notebookから利用できるようにする設定
+
+Jupyter Labの場合もほぼ同じ手順となります。  
+適宜読み替えて進めてください。
 
 `introduction_to_pandas`ディレクトリに移動し、仮想環境に入ります。
 ```
