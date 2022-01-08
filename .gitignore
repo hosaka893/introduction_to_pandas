@@ -128,5 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# データ
+# 各章のデータ格納ディレクトリ
 /*/data/**
+!/*/data/.gitkeep
