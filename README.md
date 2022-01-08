@@ -2,8 +2,17 @@
 pandas初心者向けの学習教材です。  
 勉強会等でご利用ください。
 
-## 仮想環境の構築
+## 事前に必要となる知識
+- pandasとは何か？またどんなことができるのか？
+- Jupyter NotebookまたはJupyter Labの簡単な操作方法
 
+キノコードさんの以下の動画などはとても分かりやすいのでお薦めです。
+
+__【キノコード / プログラミング学習チャンネル】__
+- [Pandas入門｜02.jupyter Labの使い方｜プログラムの記述や実行、表やグラフも表示できるPythonユーザーに人気のツール](https://www.youtube.com/watch?v=iTAgip9aaTY)
+- [Pandas入門｜03.Pandasとは?｜できることや使い方をわかりやすく解説します｜できることはCSV操作から人工知能開発まで。](https://www.youtube.com/watch?v=ubJohq5feeY)
+
+## 実行環境の構築
 Jupyter NotebookまたはJupyter Labが動く環境があれば、特別な設定は必要ありません。  
 必要なPythonライプラリを適宜インストールしてください。
 
@@ -56,7 +65,6 @@ Python 3.9.7
 ```
 
 ## 仮想環境をJupyter Notebookから利用できるようにする設定
-
 Jupyter Labの場合もほぼ同じ手順となります。  
 適宜読み替えて進めてください。
 
@@ -89,7 +97,7 @@ $ pipenv run jupyter notebook
 
 ## 参考資料
 下記の資料を参考に作成しました。  
-どれもとても良い書籍ですので、より深くpandasを勉強したい方は是非挑戦してみてください。
+いずれもとても良い内容の書籍ですので、より深くpandasを勉強したい方は是非挑戦してみてください。
 
 - [前処理大全[データ分析のためのSQL/R/Python実践テクニック]](https://www.amazon.co.jp/dp/4774196479/)  
 本橋 智光(著), 技術評論社, 2018/4/13
