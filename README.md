@@ -12,10 +12,11 @@ __【キノコード / プログラミング学習チャンネル】__
 - [Pandas入門｜02.jupyter Labの使い方｜プログラムの記述や実行、表やグラフも表示できるPythonユーザーに人気のツール](https://www.youtube.com/watch?v=iTAgip9aaTY)
 - [Pandas入門｜03.Pandasとは?｜できることや使い方をわかりやすく解説します｜できることはCSV操作から人工知能開発まで。](https://www.youtube.com/watch?v=ubJohq5feeY)
 
-## 実行環境の構築
-Jupyter NotebookまたはJupyter Labが動く環境があれば、特別な設定は必要ありません。  
-必要なPythonライプラリを適宜インストールしてください。
+## 実行環境の準備
+Jupyter NotebookまたはJupyter Labが動く環境があれば、特別な準備は必要ありません。  
+`Pipfile`に記載のPythonライブラリを適宜インストールしてください。
 
+### 仮想環境の構築
 `pipenv`で仮想環境を構築する場合は、以下の手順でおこないます。
 
 `pipenv`がない場合はインストール。
@@ -64,7 +65,7 @@ Python 3.9.7
 (introduction_to_pandas) $ exit
 ```
 
-## 仮想環境をJupyter Notebookから利用できるようにする設定
+### 仮想環境をJupyter Notebookから利用できるようにする
 Jupyter Labの場合もほぼ同じ手順となります。  
 適宜読み替えて進めてください。
 
