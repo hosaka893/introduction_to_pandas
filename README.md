@@ -16,9 +16,9 @@ __【キノコード / プログラミング学習チャンネル】__
 Jupyter NotebookまたはJupyter Labが動く環境があれば、特別な準備は必要ありません。  
 `Pipfile`に記載のPythonライブラリを適宜インストールしてください。
 
-### 仮想環境の構築
-`pipenv`で仮想環境を構築する場合は、以下の手順でおこないます。
+`pipenv`で仮想環境を構築してJupyter NotebookまたはJupyter Labを利用する場合は、以下の２つのステップでおこないます。
 
+### Step1. 仮想環境の構築
 `pipenv`がない場合はインストール。
 ```
 $ pip install pipenv
@@ -65,7 +65,7 @@ Python 3.9.7
 (introduction_to_pandas) $ exit
 ```
 
-### 仮想環境をJupyter Notebookから利用できるようにする
+### Step2. 仮想環境をJupyter Notebookから利用できるようにする
 Jupyter Labの場合もほぼ同じ手順となります。  
 適宜読み替えて進めてください。
 
