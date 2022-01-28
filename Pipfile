@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+beautifulsoup4 = "*"
 folium = "*"
 ipykernel = "*"
 jupyter = "*"
@@ -11,7 +12,9 @@ jupyterlab = "*"
 matplotlib = "*"
 numpy = "*"
 pandas = "*"
+requests = "*"
 seaborn = "*"
+selenium = "*"
 
 [dev-packages]
 autopep8 = "*"
