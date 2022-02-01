@@ -132,5 +132,10 @@ dmypy.json
 /*/data/**
 !/*/data/.gitkeep
 
+# 各章のライブラリディレクトリ
+!/*/lib/
+/*/lib/**
+!/*/lib/.gitkeep
+
 # mac
 **/.DS_Store
