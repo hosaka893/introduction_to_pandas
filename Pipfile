@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 beautifulsoup4 = "*"
 folium = "*"
+geopy = "*"
 ipykernel = "*"
 jupyter = "*"
 jupyterlab = "*"
