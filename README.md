@@ -69,24 +69,12 @@ Python 3.9.7
 Jupyter Labの場合もほぼ同じ手順となります。  
 適宜読み替えて進めてください。
 
-`introduction_to_pandas`ディレクトリに移動し、仮想環境に入ります。
-```
-$ cd introduction_to_pandas
-$ pipenv shell
-```
-
 仮想環境をカーネルに追加。
 ```
-(introduction_to_pandas) $ python -m ipykernel install --user --name=introduction_to_pandas
+$ pipenv run python -m ipykernel install --user --name=introduction_to_pandas
 ```
 
-仮想環境を抜けます。
-```
-(introduction_to_pandas) $ exit
-```
-
-Jupyter Notebookの起動。  
-以下のコマンドを実行するか、仮想環境に入ったまま`jupyter notebook`を実行してもOKです。
+Jupyter Notebookの起動。
 ```
 $ pipenv run jupyter notebook
 ```
