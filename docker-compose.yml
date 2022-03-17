@@ -1,0 +1,28 @@
+version: "3"
+services:
+  notebook8080:
+    build: .
+    ports:
+      - "8080:8888"
+    volumes:
+      - ./data:/app/data:ro
+      - ./lib:/app/lib:ro
+      - python-packages:/root/.local/share
+  notebook8081:
+    build: .
+    ports:
+      - "8081:8888"
+    volumes:
+      - ./data:/app/data:ro
+      - ./lib:/app/lib:ro
+      - python-packages:/root/.local/share
+  notebook8082:
+    build: .
+    ports:
+      - "8082:8888"
+    volumes:
+      - ./data:/app/data:ro
+      - ./lib:/app/lib:ro
+      - python-packages:/root/.local/share
+volumes:
+  python-packages:
