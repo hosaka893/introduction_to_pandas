@@ -6,12 +6,15 @@ RUN apt-get update && \
     build-essential \
     ca-certificates \
     locales \
+    fonts-takao-gothic \
+    fonts-takao-mincho \
     git && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # OSの言語設定
-RUN locale-gen ja_JP.UTF-8  
+RUN locale-gen ja_JP.UTF-8
+RUN localedef -f UTF-8 -i ja_JP ja_JP
 ENV LANG ja_JP.UTF-8  
 ENV LANGUAGE ja_JP:ja
 ENV LC_ALL ja_JP.UTF-8
