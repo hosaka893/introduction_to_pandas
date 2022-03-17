@@ -1,25 +1,10 @@
 version: "3"
 services:
-  notebook8080:
+  notebook:
     build: .
     ports:
-      - "8080:8888"
-    volumes:
-      - ./data:/app/data:ro
-      - ./lib:/app/lib:ro
-      - python-packages:/root/.local/share
-  notebook8081:
-    build: .
-    ports:
-      - "8081:8888"
-    volumes:
-      - ./data:/app/data:ro
-      - ./lib:/app/lib:ro
-      - python-packages:/root/.local/share
-  notebook8082:
-    build: .
-    ports:
-      - "8082:8888"
+      # docker-compose v1に限り、scaleオプションで複数コンテナを起動するとコンテナごとに異なるホスト側ポートが割り当てられる
+      - "8080-8082:8888"
     volumes:
       - ./data:/app/data:ro
       - ./lib:/app/lib:ro
