@@ -64,7 +64,7 @@ $ cd introduction_to_pandas
 ```
 
 `Pipfile.lock`を読み込んで環境を再現。  
-指定のバージョンのPythonで仮想環境が作られ、各ライブラリもインストールされます。
+指定のバージョンのPythonで仮想環境が作られ、そこに各パッケージもインストールされます。
 
 macでscipyをインストールする際にエラーが出る場合は、事前に`export SYSTEM_VERSION_COMPAT=1`を実行します。  
 参考：[Unable to install scipy on macOS Big Sur (Intel hardware) #13102](https://github.com/scipy/scipy/issues/13102)
