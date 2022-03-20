@@ -6,6 +6,7 @@ RUN apt-get update && \
     build-essential \
     ca-certificates \
     chromium \
+    chromium-driver \
     locales \
     fonts-takao-gothic \
     fonts-takao-mincho \
@@ -35,11 +36,6 @@ RUN pipenv install --dev --skip-lock --ignore-pipfile
 
 # ipykernelのインストール
 RUN pipenv run python -m ipykernel install --user --name=introduction_to_pandas
-
-# ChromeDriverを配置
-RUN wget https://chromedriver.storage.googleapis.com/90.0.4430.24/chromedriver_linux64.zip
-RUN unzip chromedriver_linux64.zip && rm chromedriver_linux64.zip
-RUN chmod 755 chromedriver && mv chromedriver 04_*/lib/
 
 # jupyter notebookの起動
 CMD pipenv run jupyter notebook --port=8888 --no-browser --allow-root --ip=* --NotebookApp.token=''
