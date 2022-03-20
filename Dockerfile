@@ -7,12 +7,10 @@ RUN apt-get update && \
     ca-certificates \
     chromium \
     chromium-driver \
-    locales \
     fonts-takao-gothic \
-    fonts-takao-mincho \
+    fonts-takao-mincho \    
     git \
-    wget \
-    unzip && \
+    locales && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
