@@ -87,7 +87,7 @@ ports:
   - "8080-8082:8888"
 ```
 
-Dockerコンテナを起動。
+Dockerコンテナを起動。  
 3つのコンテナを起動するので、`scale`コマンドに`notebook=3`と指定します。
 ```
 $ docker-compose up -d --scale notebook=3
