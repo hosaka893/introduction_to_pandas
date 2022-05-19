@@ -1,6 +1,6 @@
 # pandas入門
 pandas初心者向けの学習教材です。  
-どんどんフォークし、ご自身のグループに合わせた内容にしてご活用ください。
+どんどんフォークして、ご自身のグループに合わせた内容にしてご活用ください。
 
 ## 1. 事前に必要となる知識
 - pandasとは何か？またどんなことができるのか？
@@ -19,9 +19,11 @@ Jupyter NotebookまたはJupyter Labが動く環境があれば、特別な準�
 適当な環境がない場合、以下のDockerまたはPipenvによる実行環境を構築してください。  
 いずれかの環境でjupyterを起動後、構築した仮想環境をカーネルに設定します。
 
-### 2-1. Dockerによる環境構築
+### 2-1. Dockerによるローカル環境構築
+ローカルPC上でjupyterを１つだけ起動します。
+
 Dockerがない場合はインストール。  
-https://www.docker.com/products/docker-desktop/
+[Docker Desktop - Docker](https://www.docker.com/products/docker-desktop/)
 
 リポジトリをクローン。
 ```
@@ -33,7 +35,8 @@ $ git clone https://github.com/hosaka893/introduction_to_pandas.git
 $ cd introduction_to_pandas/docker
 ```
 
-Dockerイメージの作成。
+Dockerイメージの作成。  
+最後の「.」を忘れないようにしてビルドを実行します。
 ```
 $ docker build -t my_introduction_to_pandas .
 ```
@@ -47,7 +50,62 @@ $ docker container run -it -p5000:8888 my_introduction_to_pandas
 ブラウザで以下のページにアクセスします。  
 http://localhost:5000/
 
-### 2-2. Pipenvによる環境構築
+ブラウザでJupyter Notebookを開いたら、まず任意のノートブックを開きます。  
+メニューから「カーネル」→「カーネルの変更」と辿って`introduction_to_pandas`を選択します。
+
+画面右肩のカーネルの表示が`introduction_to_pandas`になっていればOKです。
+
+### 2-2. Dockerによるサーバー環境構築
+複数のユーザーが利用できるよう、サーバー上で複数のjupyterを起動します。
+
+Dockerがない場合はインストール。   
+[Install Docker Engine | Docker Documentation](https://docs.docker.com/engine/install/)
+
+Docker Compose v1がない場合はインストール。  
+v2ではコンテナごとに異なるホスト側ポートが割り当てられません。  
+[compose/INSTALL.md at master · docker/compose · GitHub](https://github.com/docker/compose/blob/master/INSTALL.md)
+
+なお、ARM64のAmazon Linux 2上でインストールする場合は、以下を参考にインストールしてください。  
+https://gist.github.com/npearce/6f3c7826c7499587f00957fee62f8ee9?permalink_comment_id=3700256#gistcomment-3700256
+
+リポジトリをクローン。
+```
+$ git clone https://github.com/hosaka893/introduction_to_pandas.git
+```
+
+`introduction_to_pandas/docker`ディレクトリに移動。
+```
+$ cd introduction_to_pandas/docker
+```
+
+`docker-compose.yml`を編集し、`notebook`サービスのホスト側ポートの範囲を指定します。  
+ここでは3つのコンテナ用にホスト側ポート8080〜8082を解放することにします。  
+
+AWSを利用する場合、セキュリティグループのインバウンドルールで指定した範囲のポートを解放する必要があります。
+```
+ports:
+  - "8080-8082:8888"
+```
+
+Dockerコンテナを起動。
+3つのコンテナを起動するので、`scale`コマンドに`notebook=3`と指定します。
+```
+$ docker-compose up -d --scale notebook=3
+```
+
+ブラウザで以下のページにアクセスします。  
+- http://<サーバーのURL>:8080/  
+- http://<サーバーのURL>:8081/  
+- http://<サーバーのURL>:8082/
+
+ブラウザでJupyter Notebookを開いたら、まず任意のノートブックを開きます。  
+メニューから「カーネル」→「カーネルの変更」と辿って`introduction_to_pandas`を選択します。
+
+画面右肩のカーネルの表示が`introduction_to_pandas`になっていればOKです。
+
+### 2-3. Pipenvによるローカル環境構築
+ローカルPC上でjupyterを１つだけ起動します。
+
 Pipenvがない場合はインストール。
 ```
 $ pip install pipenv
@@ -88,8 +146,6 @@ Jupyter Notebookを起動。
 ```
 $ pipenv run jupyter notebook
 ```
-
-### 2-3. 構築した仮想環境をカーネルに設定
 
 ブラウザでJupyter Notebookを開いたら、まず任意のノートブックを開きます。  
 メニューから「カーネル」→「カーネルの変更」と辿って`introduction_to_pandas`を選択します。
