@@ -65,8 +65,16 @@ Docker Compose v1がない場合はインストール。
 v2ではコンテナごとに異なるホスト側ポートが割り当てられません。  
 [compose/INSTALL.md at master · docker/compose · GitHub](https://github.com/docker/compose/blob/master/INSTALL.md)
 
-なお、ARM64のAmazon Linux 2上でインストールする場合は、以下を参考にインストールしてください。  
-https://gist.github.com/npearce/6f3c7826c7499587f00957fee62f8ee9?permalink_comment_id=3700256#gistcomment-3700256
+なお、ARM64のAmazon Linux 2上でインストールする場合は、以下の手順でインストールしてください。  
+参考：https://gist.github.com/npearce/6f3c7826c7499587f00957fee62f8ee9?permalink_comment_id=3700256#gistcomment-3700256
+
+```
+$ sudo curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/master/run.sh -o /usr/local/bin/docker-compose
+
+$ sudo chmod +x /usr/local/bin/docker-compose
+
+$ docker-compose --version
+```
 
 リポジトリをクローン。
 ```
@@ -94,9 +102,9 @@ $ docker-compose up -d --scale notebook=3
 ```
 
 ブラウザで以下のページにアクセスします。  
-- http://<サーバーのURL>:8080/  
-- http://<サーバーのURL>:8081/  
-- http://<サーバーのURL>:8082/
+- https://<サーバーのドメイン名>:8080/  
+- https://<サーバーのドメイン名>:8081/  
+- https://<サーバーのドメイン名>:8082/
 
 ブラウザでJupyter Notebookを開いたら、まず任意のノートブックを開きます。  
 メニューから「カーネル」→「カーネルの変更」と辿って`introduction_to_pandas`を選択します。
