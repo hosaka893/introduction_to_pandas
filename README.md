@@ -172,6 +172,3 @@ Wes McKinney(著), 瀬戸山 雅人(翻訳), 小林 儀匡(翻訳), 滝口 開�
 
 - [データ分析者のためのPythonデータビジュアライゼーション入門 コードと連動してわかる可視化手法 (AI & TECHNOLOGY)](https://www.amazon.co.jp/dp/479816397X/)  
 小久保 奈都弥(著), 翔泳社, 2020/8/6
-
-- [scikit-learn、Keras、TensorFlowによる実践機械学習 第2版](https://www.amazon.co.jp/dp/4873119286/)  
-Aurélien Géron(著), 下田 倫大(監修), 長尾 高弘(翻訳), オライリージャパン, 2020/11/4
