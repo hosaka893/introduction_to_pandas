@@ -16,10 +16,59 @@ __【キノコード / プログラミング学習チャンネル】__
 Jupyter NotebookまたはJupyter Labが動く環境があれば、特別な準備は必要ありません。  
 `Pipfile`に記載のバージョンのPythonやパッケージを適宜インストールしてください。
 
-適当な環境がない場合、以下のDockerまたはPipenvによる実行環境を構築してください。  
+適当な環境がない場合、以下のPipenvまたはDockerによる実行環境を構築してください。  
 いずれかの環境でjupyterを起動後、構築した仮想環境をカーネルに設定します。
 
-### 2-1. Dockerによるローカル環境構築
+### 2-1. Pipenvによるローカル環境構築
+ローカルPC上でjupyterを１つだけ起動します。
+
+Pipenvがない場合はインストール。
+```
+$ pip install pipenv
+```
+
+リポジトリをクローン。
+```
+$ git clone https://github.com/hosaka893/introduction_to_pandas.git
+```
+
+`introduction_to_pandas`ディレクトリに移動。
+```
+$ cd introduction_to_pandas
+```
+
+`Pipfile.lock`を読み込んで環境を再現。  
+指定のバージョンのPythonで仮想環境が作られ、そこに各パッケージもインストールされます。
+
+macでscipyをインストールする際にエラーが出る場合は、事前に`export SYSTEM_VERSION_COMPAT=1`を実行します。  
+参考：[Unable to install scipy on macOS Big Sur (Intel hardware) #13102](https://github.com/scipy/scipy/issues/13102)
+```
+$ pipenv sync --dev
+```
+
+`Pipfile`に新しいパッケージを追加した際は以下を実行してインストールします。  
+`Pipfile.lock`も更新されます。
+```
+$ pipenv install --dev
+```
+
+仮想環境をJupyter Notebookで利用できるようカーネルを追加します。
+```
+$ pipenv run python -m ipykernel install --user --name=introduction_to_pandas
+```
+
+Jupyter Notebookを起動。  
+デフォルトブラウザでページが自動で開きます。
+```
+$ pipenv run jupyter notebook
+```
+
+ブラウザでJupyter Notebookを開いたら、まず任意のノートブックを開きます。  
+メニューから「カーネル」→「カーネルの変更」と辿って`introduction_to_pandas`を選択します。
+
+画面右肩のカーネルの表示が`introduction_to_pandas`になっていればOKです。
+
+### 2-2. Dockerによるローカル環境構築
 ローカルPC上でjupyterを１つだけ起動します。
 
 Dockerがない場合はインストール。  
@@ -55,7 +104,7 @@ http://localhost:5000/
 
 画面右肩のカーネルの表示が`introduction_to_pandas`になっていればOKです。
 
-### 2-2. Dockerによるサーバー環境構築
+### 2-3. Dockerによるサーバー環境構築
 複数のユーザーが利用できるよう、サーバー上で複数のjupyterを起動します。
 
 Dockerがない場合はインストール。   
@@ -105,55 +154,6 @@ $ docker-compose up -d --scale notebook=3
 - https://<サーバーのドメイン名>:8080/  
 - https://<サーバーのドメイン名>:8081/  
 - https://<サーバーのドメイン名>:8082/
-
-ブラウザでJupyter Notebookを開いたら、まず任意のノートブックを開きます。  
-メニューから「カーネル」→「カーネルの変更」と辿って`introduction_to_pandas`を選択します。
-
-画面右肩のカーネルの表示が`introduction_to_pandas`になっていればOKです。
-
-### 2-3. Pipenvによるローカル環境構築
-ローカルPC上でjupyterを１つだけ起動します。
-
-Pipenvがない場合はインストール。
-```
-$ pip install pipenv
-```
-
-リポジトリをクローン。
-```
-$ git clone https://github.com/hosaka893/introduction_to_pandas.git
-```
-
-`introduction_to_pandas`ディレクトリに移動。
-```
-$ cd introduction_to_pandas
-```
-
-`Pipfile.lock`を読み込んで環境を再現。  
-指定のバージョンのPythonで仮想環境が作られ、そこに各パッケージもインストールされます。
-
-macでscipyをインストールする際にエラーが出る場合は、事前に`export SYSTEM_VERSION_COMPAT=1`を実行します。  
-参考：[Unable to install scipy on macOS Big Sur (Intel hardware) #13102](https://github.com/scipy/scipy/issues/13102)
-```
-$ pipenv sync --dev
-```
-
-`Pipfile`に新しいパッケージを追加した際は以下を実行してインストールします。  
-`Pipfile.lock`も更新されます。
-```
-$ pipenv install --dev
-```
-
-仮想環境をJupyter Notebookで利用できるようカーネルを追加します。
-```
-$ pipenv run python -m ipykernel install --user --name=introduction_to_pandas
-```
-
-Jupyter Notebookを起動。  
-デフォルトブラウザでページが自動で開きます。
-```
-$ pipenv run jupyter notebook
-```
 
 ブラウザでJupyter Notebookを開いたら、まず任意のノートブックを開きます。  
 メニューから「カーネル」→「カーネルの変更」と辿って`introduction_to_pandas`を選択します。
