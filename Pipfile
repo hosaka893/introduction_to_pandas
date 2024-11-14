@@ -10,6 +10,7 @@ folium = "*"
 geopy = "*"
 html5lib = "*"
 ipykernel = "*"
+japanize-matplotlib = "*"
 jupyter = "*"
 jupyterlab = "*"
 lxml = "*"
@@ -28,4 +29,4 @@ autopep8 = "*"
 flake8 = "*"
 
 [requires]
-python_version = "3.9"
+python_version = "3.10"
